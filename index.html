@@ -199,12 +199,12 @@
 
     /* ── INVESTMENT ── */
     #investment { padding: 100px 80px; background: var(--dark); }
-    .investment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; margin-bottom: 48px; }
-    .inv-table { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: var(--radius-lg); overflow: hidden; }
-    .inv-table-header { padding: 20px 28px; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-light); font-weight: 600; }
-    .inv-row { display: flex; justify-content: space-between; align-items: center; padding: 16px 28px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .investment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; margin-bottom: 48px; align-items: stretch; }
+    .inv-table { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; }
+    .inv-table-header { padding: 20px 28px; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-light); font-weight: 600; flex-shrink: 0; }
+    .inv-row { display: flex; justify-content: space-between; align-items: center; padding: 16px 28px; border-bottom: 1px solid rgba(255,255,255,0.04); flex-shrink: 0; }
     .inv-row:last-child { border-bottom: none; }
-    .inv-row.total { background: rgba(82,183,136,0.07); border-top: 1px solid rgba(82,183,136,0.18); }
+    .inv-row.total { background: rgba(82,183,136,0.07); border-top: 1px solid rgba(82,183,136,0.18); margin-top: auto; }
     .inv-name { font-size: 0.88rem; color: rgba(244,240,232,0.65); }
     .inv-row.total .inv-name { color: var(--green-light); font-weight: 700; font-size: 0.92rem; }
     .inv-value { font-size: 0.95rem; color: var(--cream); font-weight: 600; }
