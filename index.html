@@ -44,8 +44,8 @@
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(82,183,136,0.12);
     }
-    .nav-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--cream); font-style: italic; letter-spacing: 0.02em; }
-    .nav-logo span { font-style: normal; font-weight: 600; color: var(--gold); }
+    .nav-logo { display: flex; align-items: center; }
+    .nav-logo-img { height: 28px; width: auto; display: block; }
     .nav-links { display: flex; gap: 28px; list-style: none; }
     .nav-links a { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(244,240,232,0.65); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--gold); }
@@ -266,7 +266,9 @@
     .footer-links a { color: rgba(244,240,232,0.4); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
     .footer-links a:hover { color: var(--gold); }
     .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; gap: 16px; }
-    .footer-brand { font-family: var(--serif); font-style: italic; font-size: 0.9rem; color: rgba(244,240,232,0.25); }
+    .footer-brand { display: flex; align-items: center; gap: 10px; color: rgba(244,240,232,0.25); font-size: 0.88rem; }
+    .footer-logo-img { height: 20px; width: auto; opacity: 0.3; }
+    .step-logo-img { height: 14px; width: auto; display: inline-block; vertical-align: middle; }
     .footer-url { font-size: 0.82rem; color: rgba(244,240,232,0.3); }
 
     /* ── REVEAL ── */
@@ -334,7 +336,7 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo"><span>Boulevard</span> Creative</div>
+  <div class="nav-logo"><img src="bcwhite.png" alt="Boulevard Creative" class="nav-logo-img"></div>
   <ul class="nav-links">
     <li><a href="#opportunity">Opportunity</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -935,7 +937,7 @@
     </div>
     <div class="step-card rev">
       <div class="step-num">2</div>
-      <div class="step-owner boulevard">Boulevard Creative</div>
+      <div class="step-owner boulevard"><img src="bcwhite.png" alt="Boulevard Creative" class="step-logo-img"></div>
       <div class="step-action">Mutual NDA executed between Boulevard Creative and Renewabuild</div>
     </div>
     <div class="step-card rev">
@@ -945,17 +947,17 @@
     </div>
     <div class="step-card rev">
       <div class="step-num">4</div>
-      <div class="step-owner boulevard">Boulevard Creative</div>
+      <div class="step-owner boulevard"><img src="bcwhite.png" alt="Boulevard Creative" class="step-logo-img"></div>
       <div class="step-action">Issue 50% Phase 1 deposit invoice</div>
     </div>
     <div class="step-card rev">
       <div class="step-num">5</div>
-      <div class="step-owner boulevard">Boulevard Creative</div>
+      <div class="step-owner boulevard"><img src="bcwhite.png" alt="Boulevard Creative" class="step-logo-img"></div>
       <div class="step-action">Kickoff call scheduled — 60 minutes with Peter and Bill</div>
     </div>
     <div class="step-card rev">
       <div class="step-num">6</div>
-      <div class="step-owner boulevard">Boulevard Creative</div>
+      <div class="step-owner boulevard"><img src="bcwhite.png" alt="Boulevard Creative" class="step-logo-img"></div>
       <div class="step-action">Begin Brand Foundation and Messaging Framework immediately</div>
     </div>
   </div>
@@ -1011,7 +1013,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-brand">Boulevard Creative — Strategy · Marketing · Technology · Design · Product · Project Management</div>
+    <div class="footer-brand"><img src="bcwhite.png" alt="Boulevard Creative" class="footer-logo-img"> <span>— Strategy · Marketing · Technology · Design · Product · Project Management</span></div>
     <div class="footer-url">boulevardrva.com &nbsp;·&nbsp; March 2026</div>
   </div>
 </footer>
