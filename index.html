@@ -69,15 +69,45 @@
 
     /* ── HERO ── */
     #hero {
-      min-height: 85vh; background: var(--dark);
+      min-height: 85vh;
+      background: var(--dark) url('hempcrete-building.jpg') center 40% / cover no-repeat;
       display: flex; flex-direction: column; justify-content: center;
       padding: 120px 80px 80px; position: relative; overflow: hidden;
     }
     #hero::before {
       content: ''; position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse 80% 60% at 70% 30%, rgba(45,106,79,0.35) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 50% at 10% 80%, rgba(201,150,62,0.15) 0%, transparent 60%);
+        linear-gradient(to right, rgba(12,26,17,0.93) 0%, rgba(12,26,17,0.82) 55%, rgba(12,26,17,0.55) 100%),
+        radial-gradient(ellipse 80% 60% at 70% 30%, rgba(45,106,79,0.3) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 10% 80%, rgba(201,150,62,0.12) 0%, transparent 60%);
+    }
+
+    /* ── IMAGE BREAK ── */
+    .img-break {
+      height: 440px;
+      background: url('hempcrete-blocks.png') center 55% / cover no-repeat;
+      background-attachment: fixed;
+      position: relative; overflow: hidden;
+    }
+    .img-break-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(12,26,17,0.78) 0%, rgba(12,26,17,0.5) 50%, rgba(45,106,79,0.45) 100%);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .img-break-inner {
+      text-align: center; padding: 0 40px; max-width: 780px;
+    }
+    .img-break-eyebrow {
+      font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--green-light); font-weight: 600; margin-bottom: 20px; display: block;
+    }
+    .img-break-text {
+      font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2.4rem);
+      color: var(--cream); font-style: italic; line-height: 1.4;
+    }
+    .img-break-text em { font-style: normal; color: var(--gold-light); }
+    @media (max-width: 640px) {
+      .img-break { height: 320px; background-attachment: scroll; }
     }
     #hero::after {
       content: 'HEMPCRETE'; position: absolute; right: -40px; bottom: 60px;
@@ -388,6 +418,16 @@
     <p class="lead light" style="margin-top:18px;">The farmer-founder origin story is one of Renewabuild's strongest brand assets — rare, authentic, and deeply American. We will make it the centerpiece of everything we build together.</p>
   </div>
 </section>
+
+<!-- IMAGE BREAK -->
+<div class="img-break">
+  <div class="img-break-overlay">
+    <div class="img-break-inner">
+      <span class="img-break-eyebrow">Renewabuild · The Product</span>
+      <p class="img-break-text">The first structural hempcrete interlocking block system<br>to enter the <em>U.S. market.</em></p>
+    </div>
+  </div>
+</div>
 
 <!-- COMPANY -->
 <section id="company">
