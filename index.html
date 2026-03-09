@@ -138,7 +138,7 @@
     #roadmap { padding: 100px 80px; background: var(--cream-soft); }
     .roadmap-header { text-align: center; margin-bottom: 64px; }
     .phases-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
-    .phase-card { background: var(--white); border-radius: var(--radius-lg); padding: 40px 32px; border: 1px solid #E0DDD8; transition: transform 0.2s, box-shadow 0.2s; }
+    .phase-card { background: var(--white); border-radius: var(--radius-lg); padding: 40px 32px; border: 1px solid #E0DDD8; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
     .phase-card:hover { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(0,0,0,0.08); }
     .phase-card.featured { border-color: var(--green); background: var(--dark); }
     .phase-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; padding: 6px 14px; border-radius: 20px; margin-bottom: 20px; }
@@ -150,12 +150,12 @@
     .phase-card.featured .phase-time { color: rgba(244,240,232,0.45); }
     .phase-card h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--text-dark); margin-bottom: 20px; }
     .phase-card.featured h3 { color: var(--cream); }
-    .phase-items { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .phase-items { list-style: none; display: flex; flex-direction: column; gap: 10px; flex: 1; }
     .phase-items li { font-size: 0.86rem; color: var(--text-mid); padding-left: 18px; position: relative; line-height: 1.4; }
     .phase-items li::before { content: '—'; position: absolute; left: 0; color: var(--green-mid); }
     .phase-card.featured .phase-items li { color: rgba(244,240,232,0.65); }
     .phase-card.featured .phase-items li::before { color: var(--green-light); }
-    .phase-goal { margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.07); font-size: 0.84rem; font-style: italic; color: var(--text-mid); font-family: var(--serif); }
+    .phase-goal { margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.07); font-size: 0.84rem; font-style: italic; color: var(--text-mid); font-family: var(--serif); }
     .phase-card.featured .phase-goal { border-color: rgba(244,240,232,0.08); color: rgba(244,240,232,0.45); }
 
     /* ── DELIVERABLES ── */
@@ -163,15 +163,15 @@
     .phase-section-header { margin-bottom: 64px; }
     .phase-number-tag { display: inline-flex; align-items: center; gap: 10px; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 16px; }
     .deliverables-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-    .deliverable-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: var(--radius-lg); padding: 36px; transition: border-color 0.2s; }
+    .deliverable-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: var(--radius-lg); padding: 36px; transition: border-color 0.2s; display: flex; flex-direction: column; }
     .deliverable-card:hover { border-color: rgba(82,183,136,0.3); }
     .d-number { font-family: var(--serif); font-size: 3rem; font-weight: 700; color: rgba(82,183,136,0.18); line-height: 1; margin-bottom: 16px; }
     .d-title { font-size: 1.05rem; font-weight: 700; color: var(--cream); margin-bottom: 12px; }
     .d-desc { font-size: 0.86rem; line-height: 1.65; color: rgba(244,240,232,0.55); margin-bottom: 20px; }
-    .d-items { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+    .d-items { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 0; flex: 1; }
     .d-items li { font-size: 0.82rem; color: rgba(244,240,232,0.5); padding-left: 18px; position: relative; line-height: 1.45; }
     .d-items li::before { content: '→'; position: absolute; left: 0; color: var(--green-light); font-size: 0.75rem; }
-    .d-price { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.07); }
+    .d-price { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.07); }
     .price-label { font-size: 0.7rem; color: rgba(244,240,232,0.35); letter-spacing: 0.1em; text-transform: uppercase; }
     .price-amount { font-size: 1.3rem; font-weight: 700; color: var(--gold-light); font-family: var(--serif); }
     .bundle-card { background: linear-gradient(135deg, var(--green) 0%, #1A4D35 100%); border-radius: var(--radius-lg); padding: 48px; margin-top: 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 32px; }
@@ -184,12 +184,13 @@
     /* ── PHASE 2 ── */
     #phase2 { padding: 100px 80px; background: var(--cream-soft); }
     .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-    .service-card { background: var(--white); border: 1px solid #E0DDD8; border-radius: var(--radius-lg); padding: 36px; transition: all 0.2s; }
+    .service-card { background: var(--white); border: 1px solid #E0DDD8; border-radius: var(--radius-lg); padding: 36px; transition: all 0.2s; display: flex; flex-direction: column; }
     .service-card:hover { border-color: var(--green); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.06); }
-    .service-letter { width: 40px; height: 40px; border-radius: 8px; background: var(--dark); color: var(--green-light); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem; margin-bottom: 20px; font-family: var(--serif); }
+    .service-letter { width: 40px; height: 40px; border-radius: 8px; background: var(--dark); color: var(--green-light); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1rem; margin-bottom: 20px; font-family: var(--serif); flex-shrink: 0; }
     .service-title { font-size: 1.02rem; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; }
     .service-desc { font-size: 0.86rem; line-height: 1.6; color: var(--text-mid); margin-bottom: 20px; }
-    .service-price { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid #EDEBE7; }
+    .service-card .d-items { flex: 1; margin-bottom: 0; }
+    .service-price { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; margin-top: auto; border-top: 1px solid #EDEBE7; }
     .service-price .price-label { font-size: 0.7rem; color: var(--text-mid); text-transform: uppercase; letter-spacing: 0.1em; }
     .service-price .price-amount { font-size: 1.3rem; font-weight: 700; color: var(--green); font-family: var(--serif); }
     .phase2-bundle { background: var(--dark); border-radius: var(--radius-lg); padding: 48px; margin-top: 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 32px; }
@@ -273,18 +274,20 @@
     .rev.visible { opacity: 1; transform: none; }
 
     /* ── RESPONSIVE ── */
+
+    /* Tablet: 640–960px */
     @media (max-width: 960px) {
       nav { padding: 0 24px; }
       .nav-links { display: none; }
       #hero { padding: 100px 24px 64px; }
       #hero::after { display: none; }
       .hero-scroll { display: none; }
-      #opportunity, #about { grid-template-columns: 1fr; gap: 40px; }
+      #opportunity { display: grid; grid-template-columns: 1fr; gap: 40px; }
       .about-grid { grid-template-columns: 1fr; gap: 48px; }
-      .phases-grid { grid-template-columns: 1fr; }
+      .phases-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
       .investment-grid { grid-template-columns: 1fr; }
-      #opportunity, #company, #about, #roadmap, #phase1, #phase2, #investment, #timeline, #needs, #next-steps, #terms { padding: 72px 24px; }
-      footer { padding: 48px 24px 32px; }
+      #opportunity, #company, #about, #roadmap, #phase1, #phase2, #investment, #timeline, #needs, #next-steps, #terms { padding: 72px 32px; }
+      footer { padding: 48px 32px 32px; }
       .footer-top { flex-direction: column; }
       .footer-links { align-items: flex-start; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
@@ -293,7 +296,37 @@
       .bundle-card { flex-direction: column; }
       .bundle-price { text-align: left; }
       .phase2-bundle { flex-direction: column; }
+    }
+
+    /* Mobile: <640px */
+    @media (max-width: 640px) {
+      #opportunity, #company, #about, #roadmap, #phase1, #phase2, #investment, #timeline, #needs, #next-steps, #terms { padding: 56px 20px; }
+      footer { padding: 40px 20px 28px; }
+      .phases-grid { grid-template-columns: 1fr; }
+      .deliverables-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .needs-grid { grid-template-columns: 1fr 1fr; }
       .capabilities-list { grid-template-columns: 1fr; }
+      .glance-grid { grid-template-columns: 1fr; }
+      /* Timeline: horizontal scroll on small screens */
+      .timeline-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .timeline-table { min-width: 520px; }
+      .bundle-card { padding: 32px 24px; }
+      .bundle-amount { font-size: 2.2rem; }
+      .phase2-bundle { padding: 32px 24px; }
+      .combined-banner { padding: 28px 24px; }
+      .combined-total { font-size: 2rem; }
+      #investment { padding: 56px 20px; }
+      .inv-row { padding: 14px 20px; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+      .hero-actions .btn { width: 100%; text-align: center; }
+    }
+
+    /* Very small: <400px */
+    @media (max-width: 400px) {
+      .needs-grid { grid-template-columns: 1fr; }
+      #hero h1 { font-size: 2.6rem; }
     }
   </style>
 </head>
@@ -584,7 +617,7 @@
       <div class="service-letter">A</div>
       <div class="service-title">Website Design & Development</div>
       <div class="service-desc">Renewabuild's digital front door — the first thing any prospect, investor, or partner will check after a conference conversation. It doesn't need to be complex. It needs to be credible.</div>
-      <ul class="d-items" style="color:var(--text-mid); margin-bottom:16px;">
+      <ul class="d-items" style="color:var(--text-mid);">
         <li style="color:var(--text-mid);">5–7 pages: product overview, science & performance data, use cases by segment, team & founder story, contact</li>
         <li style="color:var(--text-mid);">Mobile-responsive, fast-loading design aligned to your brand</li>
         <li style="color:var(--text-mid);">SEO-structured content, contact form, and analytics integration</li>
@@ -599,7 +632,7 @@
       <div class="service-letter">B</div>
       <div class="service-title">CRM Setup & Sales Pipeline Configuration</div>
       <div class="service-desc">The right CRM for a five-person team running relationship-based B2B sales with long cycles across three distinct buyer segments. We recommend, configure, and train — so you're not starting from a blank screen.</div>
-      <ul class="d-items" style="color:var(--text-mid); margin-bottom:16px;">
+      <ul class="d-items" style="color:var(--text-mid);">
         <li style="color:var(--text-mid);">Platform recommendation and comparison with clear rationale</li>
         <li style="color:var(--text-mid);">Pipeline stages and deal tracking configured for all three segments</li>
         <li style="color:var(--text-mid);">Email integration and follow-up sequence templates</li>
@@ -614,7 +647,7 @@
       <div class="service-letter">C</div>
       <div class="service-title">Modular Sales Collateral System</div>
       <div class="service-desc">A core sales piece that works across all audiences, plus segment-specific inserts that can be swapped depending on who you're talking to. Built to scale as your geographic footprint expands.</div>
-      <ul class="d-items" style="color:var(--text-mid); margin-bottom:16px;">
+      <ul class="d-items" style="color:var(--text-mid);">
         <li style="color:var(--text-mid);">Core brochure or capability overview — consistent across all segments</li>
         <li style="color:var(--text-mid);">Three segment-specific inserts: residential, commercial/industrial, government</li>
         <li style="color:var(--text-mid);">Print-ready and digital formats for every piece</li>
@@ -629,7 +662,7 @@
       <div class="service-letter">D</div>
       <div class="service-title">Competitive Intelligence & Market Benchmarking</div>
       <div class="service-desc">A focused audit of the competitive landscape that prepares your team for every serious buyer conversation and feeds directly into your messaging and sales positioning.</div>
-      <ul class="d-items" style="color:var(--text-mid); margin-bottom:16px;">
+      <ul class="d-items" style="color:var(--text-mid);">
         <li style="color:var(--text-mid);">Direct competitor analysis in hempcrete and bio-based structural materials</li>
         <li style="color:var(--text-mid);">Claim mapping: what competitors say vs. what Renewabuild can substantiate with data</li>
         <li style="color:var(--text-mid);">Geographic coverage vs. your 12-state license territory</li>
@@ -644,7 +677,7 @@
       <div class="service-letter">E</div>
       <div class="service-title">Technology Integration Consulting</div>
       <div class="service-desc">Technology decisions made early will either accelerate or constrain your growth. This service covers the decisions you should not have to make alone.</div>
-      <ul class="d-items" style="color:var(--text-mid); margin-bottom:16px;">
+      <ul class="d-items" style="color:var(--text-mid);">
         <li style="color:var(--text-mid);">Tech stack audit and recommendations — CRM, marketing automation, document management, analytics</li>
         <li style="color:var(--text-mid);">Microsoft 365 ecosystem review and optimization</li>
         <li style="color:var(--text-mid);">Marketing automation setup: email sequences, lead capture, nurture workflows</li>
@@ -659,7 +692,7 @@
       <div class="service-letter">F</div>
       <div class="service-title">Ongoing Marketing, Execution & Website Retainer</div>
       <div class="service-desc">Once the foundation is in place, this retainer keeps everything running, current, and growing. Your team focuses on selling — we keep the engine running.</div>
-      <ul class="d-items" style="color:var(--text-mid); margin-bottom:16px;">
+      <ul class="d-items" style="color:var(--text-mid);">
         <li style="color:var(--text-mid);">Monthly content marketing and thought leadership development</li>
         <li style="color:var(--text-mid);">Email nurture sequences by segment, managed and optimized</li>
         <li style="color:var(--text-mid);">PR and earned media strategy — the farmer-founder story is compelling</li>
@@ -766,7 +799,8 @@
   <p class="section-label rev">Phase 1 Timeline</p>
   <h2 class="rev">Denver is March 25. The schedule is achievable.</h2>
   <p class="lead rev" style="margin-top:16px;">Brand foundation and messaging framework come first because everything else depends on them. One round of consolidated feedback is built into the timeline.</p>
-  <table class="timeline-table rev">
+  <div class="timeline-table-wrap rev">
+  <table class="timeline-table">
     <thead>
       <tr>
         <th style="width:140px;">Week</th>
@@ -841,6 +875,7 @@
       </tr>
     </tbody>
   </table>
+  </div>
   <div class="urgency-note rev">
     <strong>The most important dependency:</strong> receiving your source materials quickly — business plan documents (under NDA), any existing Vancouver brand assets, performance and IBC compliance data, product photography, and founder names and bios. <strong>The clock starts when we receive those materials.</strong>
   </div>
